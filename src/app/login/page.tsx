@@ -3,20 +3,32 @@ import Link from "next/link";
 import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { SigninUser } from "@/models/utilModels/types";
 
 export default function Login() {
+    const router = useRouter();
     const [user, setUser] = React.useState({
         password: "",
         email: "",
     });
-    const onLogin = async () => {};
+    const onLogin = async () => {
+        try {
+            const res = await axios.post("/api/users/login", user);
+            if (res.data) {
+                router.push("/profile");
+            }
+            console.log("datagot",res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
     return (
         <div className="  flex flex-col items-center justify-center min-h-screen py-2 ">
             <h1>Login</h1>
 
             <label htmlFor="email">Email</label>
             <input
-                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
                 id="email"
                 type="email"
                 value={user.email}
@@ -25,7 +37,7 @@ export default function Login() {
             />
             <label htmlFor="">Email</label>
             <input
-                className="border p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600"
+                className="border p-2 border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black"
                 id="password"
                 type="password"
                 value={user.password}
