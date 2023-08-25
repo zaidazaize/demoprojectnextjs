@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { SigninUser } from "@/models/utilModels/types";
+import { toast } from "react-hot-toast";
 
 export default function Login() {
     const router = useRouter();
@@ -15,6 +16,8 @@ export default function Login() {
         try {
             const res = await axios.post("/api/users/login", user);
             if (res.data) {
+                toast.success("Login Success",{duration:2000});
+
                 router.push("/profile");
             }
             console.log("datagot",res.data);
@@ -46,11 +49,11 @@ export default function Login() {
             />
             <button
                 onClick={onLogin}
-                className="p-2 border-gray-300 rounded-lg mb-4 focus-outline-none focus-border-gray-600 text-white"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
             >
                 Login
             </button>
-            <Link className="text-white" href={"/signup"}>
+            <Link className="text-white bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded-lg mt-4" href={"/signup"}>
                 SignUp Now
             </Link>
         </div>

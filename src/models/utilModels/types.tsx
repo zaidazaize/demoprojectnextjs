@@ -8,3 +8,12 @@ export interface SigninUser {
     email: string;
     password: string;
 }
+
+export interface NetworkUser {
+    userName: string;
+    email: string;
+    _id: string;
+    isAdmin: boolean;
+    isVarified: boolean;
+
+}

@@ -27,15 +27,13 @@ export default function SignUp() {
             console.log(res.data);
             router.push("/login");
         } catch (error) {
-            
             console.log(error);
-            
         } finally {
             setLoading(false);
         }
     };
     return (
-        <div className="  flex flex-col items-center justify-center min-h-screen py-2 ">
+        <div className="flex flex-col items-center justify-center min-h-screen py-2">
             <h1>{loading ? "Processing" : "SignUp"}</h1>
             <label htmlFor="username">Username</label>
             <input
@@ -66,11 +64,11 @@ export default function SignUp() {
             />
             <button
                 onClick={onSignup}
-                className="p-2 border-gray-300 rounded-lg mb-4 focus-outline-none focus-border-gray-600 text-white"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
                 {buttonDisabled ? "Disabled" : "Signup"}
             </button>
-            <Link className="text-white" href={"/login"}>
+            <Link className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4 " href={"/login"}>
                 Visit Login
             </Link>
         </div>
