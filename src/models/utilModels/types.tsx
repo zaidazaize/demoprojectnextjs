@@ -15,5 +15,14 @@ export interface NetworkUser {
     _id: string;
     isAdmin: boolean;
     isVarified: boolean;
-
 }
+
+export enum EmailType {
+    VARIFICATION,
+    FORGOT_PASSWORD,
+}
+export type EmailData = {
+    email: string;
+    emailType: EmailType;
+    userId: string;
+};
