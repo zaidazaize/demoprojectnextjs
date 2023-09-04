@@ -1,0 +1,19 @@
+{
+  "/favicon.ico/route": "/favicon.ico",
+  "/page": "/",
+  "/login/page": "/login",
+  "/profile/page": "/profile",
+  "/reset-password/page": "/reset-password",
+  "/verifyemail/page": "/verifyemail",
+  "/signup/page": "/signup",
+  "/reset-password/create-new-password/page": "/reset-password/create-new-password",
+  "/reset-password/get-email-link/page": "/reset-password/get-email-link",
+  "/profile/[id]/page": "/profile/[id]",
+  "/api/users/logout/route": "/api/users/logout",
+  "/api/users/signup/route": "/api/users/signup",
+  "/api/users/me/route": "/api/users/me",
+  "/api/users/login/route": "/api/users/login",
+  "/api/users/verifyemail/route": "/api/users/verifyemail",
+  "/api/users/pw/vres-pass-tk/route": "/api/users/pw/vres-pass-tk",
+  "/api/users/pw/gen-reset-link/route": "/api/users/pw/gen-reset-link"
+}

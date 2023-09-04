@@ -1,0 +1,19 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/login/page": "app/login/page.js",
+  "/profile/page": "app/profile/page.js",
+  "/reset-password/page": "app/reset-password/page.js",
+  "/verifyemail/page": "app/verifyemail/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/reset-password/create-new-password/page": "app/reset-password/create-new-password/page.js",
+  "/reset-password/get-email-link/page": "app/reset-password/get-email-link/page.js",
+  "/profile/[id]/page": "app/profile/[id]/page.js",
+  "/api/users/logout/route": "app/api/users/logout/route.js",
+  "/api/users/signup/route": "app/api/users/signup/route.js",
+  "/api/users/me/route": "app/api/users/me/route.js",
+  "/api/users/login/route": "app/api/users/login/route.js",
+  "/api/users/verifyemail/route": "app/api/users/verifyemail/route.js",
+  "/api/users/pw/vres-pass-tk/route": "app/api/users/pw/vres-pass-tk/route.js",
+  "/api/users/pw/gen-reset-link/route": "app/api/users/pw/gen-reset-link/route.js"
+}
