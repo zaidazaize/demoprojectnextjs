@@ -12,7 +12,7 @@ enum VerifyEmailPageState {
     Success = "success",
 }
 
-export default function VerifyEmail({ request }: { request: NextRequest }) {
+export default function VerifyEmail() {
     const router = useRouter();
     /**
      * The token extracted from the URL query string.
