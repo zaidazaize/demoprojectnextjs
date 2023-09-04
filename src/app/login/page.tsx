@@ -99,12 +99,12 @@ export default function Login() {
                                 Remember me
                             </label>
                         </div>
-                        <a
-                            href="#"
+                        <Link
+                            href={"/reset-password/get-email-link"}
                             className="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500"
                         >
-                            Lost Password?
-                        </a>
+                            Forgot Password ?
+                        </Link>
                     </div>
 
                     <button

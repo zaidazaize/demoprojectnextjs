@@ -22,7 +22,7 @@ export enum EmailType {
     FORGOT_PASSWORD,
 }
 export type EmailData = {
-    email: string;
+    user: any;
     emailType: EmailType;
-    userId: string;
+    validLoc : string;
 };

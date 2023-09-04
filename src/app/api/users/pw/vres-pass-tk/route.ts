@@ -7,7 +7,7 @@ type PasswordResetReqBody = {
     password: string;
 };
 
-export default async function POST(req: NextRequest) {
+export async function POST(req: NextRequest) {
     try {
         const body: PasswordResetReqBody = await req.json();
 

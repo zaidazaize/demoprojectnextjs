@@ -1,10 +1,11 @@
 import { NextResponse ,NextRequest} from "next/server";
 import User from "./models/userModel";
 
-const publicPaths : string[] = ['/login','/signup']
+const publicPaths : string[] = ['/login','/signup',]
 
 export async function middleware(req: NextRequest) {
     const path = req.nextUrl.pathname;
+    console.log(path);
 
     const isPublic = publicPaths.includes(path);
     const token = req.cookies.get("token")?.value || "";

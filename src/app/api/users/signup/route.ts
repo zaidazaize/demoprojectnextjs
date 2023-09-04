@@ -29,16 +29,18 @@ export async function POST(req: NextRequest) {
             password: hashedPassword,
         });
         await newUser.save();
-        await sendEmail({
-            email: newUser.email,
+        const sendEmailRes = await sendEmail({
+            user: newUser,
             emailType: EmailType.VARIFICATION,
-            userId: newUser._id,
+            validLoc: "verifyemail",
         });
         return NextResponse.json({
             message: "User created successfully",
             success: true,
+            sendEmailres: sendEmailRes,
         });
     } catch (error: any) {
+        console.log(error);
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }

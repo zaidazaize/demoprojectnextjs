@@ -20,7 +20,7 @@ export async function POST(req: NextRequest) {
                 { status: 400 }
             );
         }
-        if (user.verifyTokenExpire < Date.now()) {
+        if (user.verifyTokenExpiry < Date.now()) {
             return NextResponse.json(
                 { error: "Token Expired" },
                 { status: 400 }
@@ -28,12 +28,15 @@ export async function POST(req: NextRequest) {
         }
 
         user.verifyToken = undefined;
-        user.verifyTokenExpire = undefined;
+        user.verifyTokenExpiry = undefined;
         user.isVerified = true;
         await user.save();
 
         return NextResponse.json(
-            { message: "Email Varified" },
+            {
+                message: "Email Varified",
+                success: true,
+            },
             { status: 200 }
         );
     } catch (error: any) {
